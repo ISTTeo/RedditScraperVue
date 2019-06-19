@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header msg="Reddit's Top Scrapper"/>
-    <SearchReddit />
-    <Posts v-bind:posts="posts"/>
+    <SearchReddit v-on:search-reddit="searchReddit" />
+    <Posts :key="subKey" v-bind:posts="posts"/>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
     return {
       posts: [],
       result: null,
+      subKey: 0
     }
   },
   created: function() {
@@ -32,6 +33,17 @@ export default {
       this.posts = res.data.items;
     } )
     .catch(err => console.log(err));
+  },
+  methods: {
+    searchReddit(sub) {
+       axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top.xml?limit=" + "all")
+      .then(res => {
+        this.result = res;
+        this.posts = res.data.items;
+      } )
+      .catch(err => console.log(err));
+      this.subKey += 1;
+    }
   }
 }
 </script>
