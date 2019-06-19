@@ -8,7 +8,7 @@
 <script>
 import Header from './components/Header.vue'
 import Posts from './components/Posts.vue'
-
+import axios from 'axios'
 export default {
   name: 'app',
   components: {
@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       posts: [
-        {
+        /* {
           author: "user1",
           title: "title1",
           content: "content1",
@@ -57,9 +57,16 @@ export default {
           link: "link5",
           id: "id5",
           pubDate: "pubDate5"
-        }
+        } */
       ]
     }
+  },
+  created: function() {
+  //TODO como colocar isto a funcionar e ve rque resposta esotu a ter
+  console.log("ASDAS")
+  axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + "entrepreneur" + "/new.xml?limit=" + "month")
+    .then(res => this.posts = res.data.items)
+    .catch(err => console.log(err));
   }
 }
 </script>

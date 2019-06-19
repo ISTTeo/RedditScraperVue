@@ -1,12 +1,17 @@
 <template>
-    <div><h3>{{post.title}}</h3>
-    <p>{{post.content}}</p></div>
+    <div>
+        <h3>{{post.title}}</h3>
+        <div v-html="post.content"></div>
+    </div>
 </template>
 
 <script>
 export default {
     name: "Post",
-    props: ["post"]
+    props: ["post"],
+    created() {
+        this.postHTML = post.content;
+    }
 }
 
 </script>
