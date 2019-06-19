@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header msg="Reddit's Top Scrapper"/>
+    <SearchReddit />
     <Posts v-bind:posts="posts"/>
   </div>
 </template>
@@ -8,64 +9,28 @@
 <script>
 import Header from './components/Header.vue'
 import Posts from './components/Posts.vue'
+import SearchReddit from './components/SearchReddit.vue'
+
 import axios from 'axios'
 export default {
   name: 'app',
   components: {
     Header,
-    Posts
+    Posts,
+    SearchReddit
   },
   data() {
     return {
-      posts: [
-        /* {
-          author: "user1",
-          title: "title1",
-          content: "content1",
-          link: "link1",
-          id: "id1",
-          pubDate: "pubDate1"
-        },
-        {
-          author: "user2",
-          title: "title2",
-          content: "content2",
-          link: "link2",
-          id: "id2",
-          pubDate: "pubDate2"
-        },
-        {
-          author: "user3",
-          title: "title3",
-          content: "content3",
-          link: "link3",
-          id: "id3",
-          pubDate: "pubDate3"
-        },
-        {
-          author: "user4",
-          title: "title4",
-          content: "content4",
-          link: "link4",
-          id: "id4",
-          pubDate: "pubDate4"
-        }
-        ,{
-          author: "user5",
-          title: "title5",
-          content: "content5",
-          link: "link5",
-          id: "id5",
-          pubDate: "pubDate5"
-        } */
-      ]
+      posts: [],
+      result: null,
     }
   },
   created: function() {
-  //TODO como colocar isto a funcionar e ve rque resposta esotu a ter
-  console.log("ASDAS")
-  axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + "entrepreneur" + "/new.xml?limit=" + "month")
-    .then(res => this.posts = res.data.items)
+  axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + "entrepreneur" + "/top.xml?limit=" + "all")
+    .then(res => {
+      this.result = res;
+      this.posts = res.data.items;
+    } )
     .catch(err => console.log(err));
   }
 }
