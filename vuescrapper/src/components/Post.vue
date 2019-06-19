@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: "Post",
     props: ["post"],
@@ -16,7 +18,7 @@ export default {
     }
   },
   created: function() {
-  axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "http://www.reddit.com/r/" + "entrepreneur" + "/comments/" + post.id + "/.xml?limit=" + "5")
+  axios.get( "https://api.rss2json.com/v1/api.json?rss_url=" + "http://www.reddit.com/r/" + "entrepreneur" + "/comments/" + this.post.id + "/.xml?limit=" + "5")
     .then(res => {
       this.result = res;
       this.comments = null;
