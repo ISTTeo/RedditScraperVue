@@ -1,8 +1,21 @@
 <template>
+  
     <div>
-        <h3>{{post.title}}</h3>
-        <!-- <div v-html="post.content"></div> -->
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            {{post.title}}
+          </a>
+          
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div v-html="post.content" class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+        <h3></h3>
+        <!-- <div v-html="post.content"></div>  -->
     </div>
+    
 </template>
 
 <script>

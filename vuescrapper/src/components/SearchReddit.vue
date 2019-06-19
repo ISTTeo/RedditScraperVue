@@ -2,7 +2,7 @@
     <div>
         <form @submit="searchReddit">
             <input type="text" v-model="subreddit" name="subreddit" placeholder="/r/...">
-            <input type="submit" value="Search">
+            <input class='btn btn-primary' type="submit" value="Search">
         </form>
     </div>
 </template>

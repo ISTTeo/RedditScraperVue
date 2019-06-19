@@ -2,10 +2,10 @@
     <div>
 
         <h1>POSTS</h1>
-    <div v-bind:key="post.id" v-for="post in posts"> 
-        <Post v-bind:post="post" />
+        <div v-bind:key="post.id" v-for="post in posts"> 
+            <Post v-bind:post="post" />
 
-    </div>
+        </div>
     </div>
 </template>
 
