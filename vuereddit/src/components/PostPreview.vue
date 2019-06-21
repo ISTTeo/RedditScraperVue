@@ -1,16 +1,15 @@
 <template>
-    <div style="text-align:left;margin-left: 20px;">
+    <div style="text-align:left;margin-left: 20px; padding: 20px; border: 2px solid black; width: 90%;">
         <h4>{{post.title}}</h4>
-        <div v-if="cleanText.length > 200"> {{ cleanText.substring(0,200) }} <b>. . .</b></div>
-        <div v-if="cleanText.length <= 200"> {{ cleanText }} </div>
         <div v-if="cleanText == null"> {{ post.title }} </div>
-        <hr>
+        <div v-if="cleanText != null && cleanText.length > 200"> {{ cleanText.substring(0,200) }} <b>. . .</b></div>
+        <div v-if="cleanText != null && cleanText.length <= 200"> {{ cleanText }} </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Post",
+    name: "PostPreview",
     props: ["post"],
     data() {
         return {

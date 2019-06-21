@@ -1,17 +1,17 @@
 <template>
     <div>
         <div v-bind:key="post.id" v-for="post in posts"> 
-            <Post v-bind:post="post"/>
+            <PostPreview v-bind:post="post"/>
         </div>
     </div>
 </template>
 
 <script>
-import Post from "./Post"
+import PostPreview from "./PostPreview"
 export default {
     name: "Posts",
     components: {
-        Post
+        PostPreview
     },
     props: ["posts"]
 }

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Navbar />
         <h1>Posts</h1>
         <SearchSubReddit v-on:search-reddit="searchSubReddit" />    
         <Posts :key="subKey" v-bind:posts="posts" />
@@ -9,12 +10,14 @@
 <script>
 import SearchSubReddit from '../components/SearchSubReddit.vue';
 import Posts from "../components/Posts"
+import Navbar from "../components/Navbar"
 import axios from 'axios';
 export default {
     name: "BySubReddit", 
     components: {
         SearchSubReddit,
-        Posts 
+        Posts,
+        Navbar
     },
     data() {
         return {
