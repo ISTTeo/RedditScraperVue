@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import BySubReddit from './views/BySubReddit'
+import Post from './views/Post'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +25,12 @@ export default new Router({
       name: 'subreddit',
       
       component: BySubReddit
+    },
+    {
+      path: '/post',
+      name: 'post',
+      component:Post ,
+      props: true
     }
   ]
 })

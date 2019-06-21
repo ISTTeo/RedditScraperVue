@@ -1,6 +1,7 @@
 <template>
     <div style="text-align:left;margin-left: 20px; padding: 20px; border: 2px solid black; width: 90%;">
-        <h4>{{post.title}}</h4>
+        <h4>{{post.title}}</h4> 
+        <h3><router-link :to="{ name: 'post', params: { post } }">READ</router-link></h3>
         <div v-if="cleanText == null"> {{ post.title }} </div>
         <div v-if="cleanText != null && cleanText.length > 200"> {{ cleanText.substring(0,200) }} <b>. . .</b></div>
         <div v-if="cleanText != null && cleanText.length <= 200"> {{ cleanText }} </div>
