@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar />
-        <h1>Posts</h1>
+        <h1>Search by /r/ </h1>
         <SearchSubReddit v-on:search-reddit="searchSubReddit" />    
         <Posts :key="subKey" v-bind:posts="posts" />
     </div>

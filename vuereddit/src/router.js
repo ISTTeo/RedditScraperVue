@@ -5,7 +5,7 @@ import BySubReddit from './views/BySubReddit'
 import Post from './views/Post'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -34,3 +34,14 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach( (to,from,next) => {
+  //If one tries to access /post directly 
+  if(to.fullPath == '/post' && from.fullPath != '/subreddit') {
+    next('/subreddit');
+  }
+
+  //Default goes to wherever it should if not filtered before this line
+  next();
+})
+export default router;

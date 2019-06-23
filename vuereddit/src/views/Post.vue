@@ -1,8 +1,11 @@
 <template>
+    
     <div>
-        <Navbar />
-        <h1>{{post.title}}</h1>
-        <div v-html="post.content"></div>
+        
+        <Navbar v-if="post" />
+        <h1 v-if="post">{{post.title}}</h1>
+        <div v-if="post" v-html="post.content"></div>
+        <h1 v-if="!post">Something bad happened, you shouldn't be here.</h1>
 
     </div>
     
