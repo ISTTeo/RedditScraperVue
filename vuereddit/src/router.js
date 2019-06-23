@@ -39,9 +39,7 @@ router.beforeEach( (to,from,next) => {
   //If one tries to access /post directly 
   if(to.fullPath == '/post' && from.fullPath != '/subreddit') {
     next('/subreddit');
-  } /* else if(to.fullPath == '/post') {
-    next('/subreddit');
-  } */
+  }
 
   //Default goes to wherever it should if not filtered before this line
   next();
