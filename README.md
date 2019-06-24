@@ -2,7 +2,7 @@
 
 **Homepage**
 
-![](/img/inspiration.png)
+![](/img/home.png)
 
 **Search by /r/**
 
