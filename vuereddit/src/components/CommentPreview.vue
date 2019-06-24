@@ -25,13 +25,12 @@ export default {
         }
     },
     created: function() {
-        console.log(this.$props.comment.content)
-            
-            this.cleanText = this.strip(this.$props.comment.content);
+        if(this.$props.comment) {
+            this.datacleanText = this.strip(this.$props.comment.content);
+        }            
             
     },
     beforeDestroy: function () {
-                this.data.cleanText = null;
                
     }
 }

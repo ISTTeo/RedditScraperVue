@@ -52,7 +52,7 @@ const router = new Router({
 
 router.beforeEach( (to,from,next) => {
   //If one tries to access /post directly 
-  if(to.fullPath == '/post' && from.fullPath != '/subreddit') {
+  if(to.fullPath == '/post' && from.fullPath != '/subreddit' && from.fullPath != '/user'  ) {
     next('/subreddit');
   }
   if(to.fullPath == '/comment' && from.fullPath != '/user') {
