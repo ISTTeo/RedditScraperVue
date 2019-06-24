@@ -2,27 +2,28 @@
   <div class="home">
 
     <!--Main Body Content-->
+    <Navbar />
     <article class="container">
       <h1>Reddit<br> Learning Machine</h1>
       <p> </p>
     </article>
 
-    <div class="box" style="position:absolute; left:45%; top: 35%;  ">
+    <!-- <div class="box" style="position:absolute; left:45%; top: 35%;  ">
       <router-link to="/about">About</router-link>
     </div>
     
     <div class="box" style="position:absolute; left:45%"><router-link to="/subreddit">Search by /r/</router-link></div>
-    
+     -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import Navbar from "../components/Navbar"
 export default {
   name: 'home',
   components: {
-    
+    Navbar
   },
   methods: {
     
