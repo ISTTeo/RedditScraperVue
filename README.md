@@ -9,6 +9,12 @@
 ![](/img/subreddit.png)
 
 **Search by /u/**
+By Posts
+
+![](/img/userpost.png)
+
+
+By Comments
 
 ![](/img/usercomment.png)
 
