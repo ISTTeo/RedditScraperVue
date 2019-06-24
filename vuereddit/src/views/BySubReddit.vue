@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         searchSubReddit(sub,time) {
-            console.log("https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top/.rss?t=" + time)
             axios.get("https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top/.rss?t=" + time)
                 .then(res => {
                     this.result = res;
