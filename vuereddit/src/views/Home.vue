@@ -52,7 +52,6 @@ export default {
     min-width: 500px;
     min-height: 200px;
     color: #fff;
-    font-family: 'Montserrat';
     height:100vmax;
   }
 

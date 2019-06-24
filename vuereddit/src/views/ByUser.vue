@@ -34,21 +34,21 @@ export default {
     },
     methods: {
         searchUser(u,time,type) {
-            console.log("/u/" + u + "/" + time + "/" + type)
+            this.subKey += 1;
             /* https://www.reddit.com/user/" + INSERTUSER + "/" + INSERTTYPE + "/.rss?sort=top&t=: + INSERTTIME */
             var url = "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/user/" + u + "/" + type + "/.rss?sort=top&t=" + time;
             console.log(url);
             axios.get(url)
                 .then(res => {
                     this.comments = res.data.items;
-                    /* document.getElementById("error").innerHTML = "Request Successful"; */
+                    document.getElementById("error").innerHTML = "Request Successful";
 
                 })
                 .catch(err => {
                     this.posts = [];
                     document.getElementById("error").innerHTML = err.message;
                  });
-                this.subKey += 1;
+                
         }
     }
 }
