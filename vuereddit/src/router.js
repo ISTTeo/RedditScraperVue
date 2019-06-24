@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import BySubReddit from './views/BySubReddit'
 import ByUser from './views/ByUser'
 import Post from './views/Post'
+import Comment from './views/Comment'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -38,6 +40,12 @@ const router = new Router({
       name: 'post',
       component:Post ,
       props: true
+    },
+    {
+      path: '/comment',
+      name: 'comment',
+      component:Comment ,
+      props: true
     }
   ]
 })
@@ -46,6 +54,9 @@ router.beforeEach( (to,from,next) => {
   //If one tries to access /post directly 
   if(to.fullPath == '/post' && from.fullPath != '/subreddit') {
     next('/subreddit');
+  }
+  if(to.fullPath == '/comment' && from.fullPath != '/user') {
+    next('/user');
   }
 
   //Default goes to wherever it should if not filtered before this line
