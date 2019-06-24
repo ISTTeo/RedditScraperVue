@@ -11,7 +11,7 @@
             <input id="weekBtn" type="button" class="button" v-on:click="setTime('week')" value="week">
             <input id="dayBtn" type="button" class="button" v-on:click="setTime('day')" value="day">
         </div>
-        <p> The API used for this doesn't handle too many request well, be patient!</p>
+        <p> The API used for this doesn't handle too many requests well, be patient!</p>
     </div>
 </template>
 
