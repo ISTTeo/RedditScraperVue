@@ -26,6 +26,7 @@ export default {
     methods: {
         searchUser(u,time,type) {
             console.log("/u/" + u + "/" + time + "/" + type)
+            /* https://www.reddit.com/user/" + INSERTUSER + "/" + INSERTTYPE + "/.rss?sort=top&t=: + INSERTTIME */
         }
     }
 }
