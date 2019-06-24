@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import BySubReddit from './views/BySubReddit'
+import ByUser from './views/ByUser'
 import Post from './views/Post'
 Vue.use(Router)
 
@@ -25,6 +26,12 @@ const router = new Router({
       name: 'subreddit',
       
       component: BySubReddit
+    },
+    {
+      path: '/user',
+      name: 'user',
+      
+      component: ByUser
     },
     {
       path: '/post',

@@ -4,6 +4,8 @@
             <li><a><router-link to="/">Home</router-link></a>|</li>
             <li><a><router-link to="/about">About</router-link></a></li>
             <li><a><router-link to="/subreddit">Search by /r/</router-link></a></li>
+            <li><a><router-link to="/user">Search by /u/</router-link></a></li>
+
         </ul>
       
     </div>
