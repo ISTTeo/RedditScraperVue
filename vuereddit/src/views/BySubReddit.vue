@@ -4,6 +4,7 @@
         <h1>Search by /r/ </h1>
         <SearchSubReddit v-on:search-reddit="searchSubReddit" />    
         <Posts :key="subKey" v-bind:posts="posts" />
+        <h2 id="error"></h2>
     </div>
 </template>
 
@@ -27,17 +28,20 @@ export default {
         }
     },
     methods: {
-        searchSubReddit(sub) {
-            console.log(sub)
-            axios.get("https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top.xml?limit=" + "all")
+        searchSubReddit(sub,time) {
+            console.log("https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top/.rss?t=" + time)
+            axios.get("https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/r/" + sub + "/top/.rss?t=" + time)
                 .then(res => {
                     this.result = res;
                     this.posts = res.data.items;
+                    document.getElementById("error").innerHTML = "Request Successful";
+
                 })
                 .catch(err => {
                     console.log(err);
                     this.posts = [];
                     this.result = null;
+                    document.getElementById("error").innerHTML = err.message;
                 });
                 this.subKey += 1;
         }
