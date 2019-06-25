@@ -23,8 +23,6 @@ export default {
         return {
             myPost: null,
         }
-    },
-    created: function() {
     }
 }
 </script>

@@ -27,11 +27,6 @@ export default {
   },
   methods: {
     
-  },
-  data() {
-    return {
-
-}
   }
 }
 </script>

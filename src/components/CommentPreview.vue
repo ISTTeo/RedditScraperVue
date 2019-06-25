@@ -29,9 +29,6 @@ export default {
             this.datacleanText = this.strip(this.$props.comment.content);
         }            
             
-    },
-    beforeDestroy: function () {
-               
     }
 }
 </script>

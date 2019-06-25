@@ -23,8 +23,6 @@ export default {
         return {
             myComment: null,
         }
-    },
-    created: function() {
     }
 }
 </script>
