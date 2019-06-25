@@ -42,14 +42,12 @@ export default {
 
             /* https://www.reddit.com/user/" + INSERTUSER + "/" + INSERTTYPE + "/.rss?sort=top&t=: + INSERTTIME */
             var url = "https://api.rss2json.com/v1/api.json?rss_url=" + "https://www.reddit.com/user/" + u + "/" + type + "/.rss?sort=top&t=" + time;
-            console.log(url);
             axios.get(url)
                 .then(res => {
                     if(type=="comments") {
                         this.subKey1 += 1;
                         this.comments = res.data.items;
                     } else {
-                        console.log(res.data.items);
                         this.subKey2 += 1;
                         this.posts = res.data.items;
                     }

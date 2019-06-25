@@ -37,7 +37,6 @@ export default {
 
                 })
                 .catch(err => {
-                    console.log(err);
                     this.posts = [];
                     this.result = null;
                     document.getElementById("error").innerHTML = err.message;
